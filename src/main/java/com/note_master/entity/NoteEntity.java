@@ -1,13 +1,11 @@
-package com.example.entity;
+package com.note_master.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class NoteEntity {
@@ -28,7 +26,6 @@ public class NoteEntity {
     }
 
     public NoteEntity() {
-
     }
 
 

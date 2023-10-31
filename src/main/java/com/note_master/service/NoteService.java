@@ -1,7 +1,7 @@
-package com.example.service;
+package com.note_master.service;
 
-import com.example.entity.NoteEntity;
-import com.example.repository.NoteRepository;
+import com.note_master.entity.NoteEntity;
+import com.note_master.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ public class NoteService {
         this.noteRepository = noteRepository;
     }
 
-    // Metode pentru CRUD
+    // CRUD
     public List<NoteEntity> getAllNotes() {
         return noteRepository.findAll();
     }
@@ -32,10 +32,10 @@ public class NoteService {
     public NoteEntity updateNote(Long id, NoteEntity updatedNote) {
         NoteEntity existingNote = noteRepository.findById(id).orElse(null);
         if (existingNote != null) {
-            // Actualizați proprietățile notiței existente cu cele din updatedNote
+
             existingNote.setTitle(updatedNote.getTitle());
             existingNote.setContent(updatedNote.getContent());
-            // Alte proprietăți pot fi actualizate aici
+
             return noteRepository.save(existingNote);
         }
         return null;

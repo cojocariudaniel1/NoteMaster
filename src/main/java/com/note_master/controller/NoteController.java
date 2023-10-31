@@ -1,9 +1,8 @@
-package com.example.controller;
+package com.note_master.controller;
 
-import com.example.entity.NoteEntity;
-import com.example.service.NoteService;
+import com.note_master.entity.NoteEntity;
+import com.note_master.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
