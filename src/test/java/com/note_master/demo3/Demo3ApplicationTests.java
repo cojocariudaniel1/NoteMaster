@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 @DataJpaTest
 class UserEntityTest {
 
@@ -20,16 +21,29 @@ class UserEntityTest {
     void testUserEntity() {
 
         UserEntity user = new UserEntity();
+        UserEntity user1 = new UserEntity();
+        UserEntity user2= new UserEntity();
         user.setUsername("john_doe");
         user.setEmail("john@example.com");
+        user1.setUsername("User1");
+        user1.setPassword("parola1");
+
+        user2.setUsername("User2");
+        user2.setPassword("parola2");
 
         userRepository.save(user);
+        userRepository.save(user1);
+        userRepository.save(user2);
+
+        int user_id = userRepository.findByUsername("User1").getId();
+        System.out.println(user_id);
+
         UserEntity savedUser = userRepository.findByUsername("john_doe");
 
         assertEquals("john@example.com", savedUser.getEmail());
 
         userRepository.delete(savedUser);
-        assertEquals(0, userRepository.count());
+        assertEquals(2, userRepository.count());
     }
 }
 

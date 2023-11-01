@@ -11,6 +11,7 @@ import java.time.LocalDate;
 public class NoteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+
     protected Long id;
     private String title;
     private String content;

@@ -16,7 +16,6 @@ public class NoteService {
         this.noteRepository = noteRepository;
     }
 
-    // CRUD
     public List<NoteEntity> getAllNotes() {
         return noteRepository.findAll();
     }

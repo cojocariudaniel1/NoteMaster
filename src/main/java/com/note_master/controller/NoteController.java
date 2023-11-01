@@ -2,12 +2,15 @@ package com.note_master.controller;
 
 import com.note_master.entity.NoteEntity;
 import com.note_master.service.NoteService;
+import com.note_master.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+
 
 
 @RestController
@@ -20,7 +23,7 @@ public class NoteController {
         this.noteService = noteService;
     }
 
-    @GetMapping
+    @GetMapping()
     public List<NoteEntity> getAllNotes() {
         return noteService.getAllNotes();
     }
