@@ -67,7 +67,7 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
-            <version>42.2.27</version> <!-- (Verifică versiunea actuală) -->
+            <version>42.3.8</version> <!-- (Verifică versiunea actuală) -->
         </dependency>
     </dependencies>
 
