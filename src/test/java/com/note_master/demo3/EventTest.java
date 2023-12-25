@@ -57,7 +57,7 @@ public class EventTest {
     @Test
     public void TestCreateEvent() throws ParseException {
         setUp();
-        Utilizator user = new Utilizator("Daniel", "123");
+        Utilizator user = new Utilizator("Daniel", "123", "email");
         Calendar calendar = new Calendar(user);
         Event event = new Event("Event1", "Locatie 1", "12-02-2023", calendar);
         Event event2 = new Event("Event2", "Locatie 2", "14-02-2023", calendar);

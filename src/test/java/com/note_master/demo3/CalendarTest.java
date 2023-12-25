@@ -48,7 +48,7 @@ public class CalendarTest {
 
     @Test
     public void testCreateCalendar() {
-        Utilizator user = new Utilizator("Daniel", "Parola1");
+        Utilizator user = new Utilizator("Daniel", "Parola1", "email@test.com");
         Calendar calendar = new Calendar(user);
         utilizatorService.saveUtilizator(user);
         calendarService.saveCalendar(calendar);

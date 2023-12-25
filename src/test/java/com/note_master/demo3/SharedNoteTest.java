@@ -57,8 +57,8 @@ public class SharedNoteTest {
     @Test
     void testCreateSharedNoteEvent() {
         setUp();
-        Utilizator user1 = new Utilizator("User1", "Parola1");
-        Utilizator user2 = new Utilizator("User2", "Parola2");
+        Utilizator user1 = new Utilizator("User1", "Parola1", "email");
+        Utilizator user2 = new Utilizator("User2", "Parola2", "email");
 
 
         Note note1 = new Note("Note1");

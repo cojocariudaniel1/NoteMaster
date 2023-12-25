@@ -44,7 +44,7 @@ public class NoteTest {
     public void CreateNoteTest() {
         setUp();
 
-        Utilizator user1 = new Utilizator("User1", "Parola1");
+        Utilizator user1 = new Utilizator("User1", "Parola1", "email");
 
         Note note1 = new Note("Note1");
         Note note2= new Note("Note2");

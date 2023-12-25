@@ -1,7 +1,10 @@
 package com.note_master.entity;
 
 import jakarta.persistence.*;
+import jdk.jshell.execution.Util;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +21,7 @@ public class Utilizator {
 
     private String email;
 
-    private Date creationDate;
+    private LocalDate creationDate;
 
     @OneToMany(mappedBy = "utilizator", cascade = CascadeType.ALL)
     private List<Note> notes = new ArrayList<>();
@@ -26,13 +29,17 @@ public class Utilizator {
     @OneToMany(mappedBy = "utilizator", cascade = CascadeType.ALL)
     private List<Reminder> reminders = new ArrayList<>();
 
-    public Utilizator(String username, String password) {
+    public Utilizator(String username, String password, String email) {
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.creationDate = LocalDate.now();
     }
 
     public Utilizator() {
+        this.creationDate = LocalDate.now();
     }
+
 
     public List<Note> getNotes(){
         return notes;
@@ -74,11 +81,11 @@ public class Utilizator {
         this.email = email;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
