@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management Dashboard UI</title>
+    <link rel="stylesheet" href="../static/css/login_style.css" />
+</head>
+
+<body>
+    <main>
+        <section class="form-section">
+            <div class="form-wrapper">
+                <h1 class="title">Sign up</h1>
+                <form class="form" onsubmit="return false">
+
+                    <div class="form-group">
+                        <label>
+                            <span class="sr-only">Email</span>
+                            <input type="text" id="email-input" placeholder="Email" class="form-input" required>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <span class="sr-only">Username</span>
+                            <input type="text" id="username-input" placeholder="Username" class="form-input" required>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="sr-only">Password</span>
+                            <input type="password" id="password-input" placeholder="Password" class="form-input"
+                                required>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create account" class="form-submit" id="signup_button_id">
+                    </div>
+
+                    <footer class="form-footer">
+                        <div>
+                            <a href="#" class="form-link">Forgot password?</a>
+                        </div>
+                        <div>
+                            Already have an account?
+                            <a href="login_template.html" class="form-link">Log in</a>
+                        </div>
+                    </footer>
+                </form>
+            </div>
+        </section>
+        <script>
+            document.querySelector(".form-submit").addEventListener("click", function () {
+
+                const username = document.getElementById("username-input").value;
+                const password = document.getElementById("password-input").value;
+                const email = document.getElementById("email-input").value;
+
+                const dataToSend = { username: username, password: password, email:email};
+  
+                console.log(dataToSend);
+                save_user(dataToSend);
+
+
+
+            }
+            );
+
+        async function save_user(data) {
+                fetch("http://localhost:8080/utilizator/create_utilizator", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Răspuns de la server:", data);
+                        window.location.href = "login_template.html";
+                        
+                        // Aici poți face ceva cu rezultatul primit de la server
+                    })
+                    .catch(error => {
+                        displayErrorMessage("Username sau password necompletat");
+                        console.error("Probleme cu API verify account", error);
+                    });
+            };
+
+        </script>
+    </main>
+</body>
+
+</html>
