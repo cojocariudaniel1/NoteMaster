@@ -19,7 +19,7 @@ function createStickyNote(id, color, content, textColor) {
     const title = document.createElement("div");
     title.classList.add("note-title");
     title.spellcheck = false;
-    title.textContent = "Your Title"; // Puteți seta un titlu prestabilit sau să-l lăsați gol pentru a fi completat ulterior
+    title.textContent = "Your Title";
     title.contentEditable = true;
     const line1 = document.createElement("hr");
   
@@ -34,7 +34,7 @@ function createStickyNote(id, color, content, textColor) {
   
     const date = document.createElement("div");
     date.classList.add("note-date");
-    date.textContent = getCurrentDate(); // Adăugați data actuală
+    date.textContent = getCurrentDate();
   
     noteContent.addEventListener("input", function () {
       const lightness = calculateLightness(
