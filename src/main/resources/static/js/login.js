@@ -26,8 +26,7 @@ async function checkAccount(dataToSend) {
         .then(response => response.json())
         .then(data => {
           console.log("Răspuns de la server:", data);
-          window.location.href = "notes.html";
-          // Aici poți face ceva cu rezultatul primit de la server
+          window.location.href = "notes.html";r
         })
         .catch(error => {
           displayErrorMessage("Username or password incorrect!");
@@ -45,7 +44,6 @@ function getAllUsers() {
       })
       .then(data => {
           console.log("Lista utilizatorilor:", data);
-          // Aici poți face ceva cu rezultatul primit de la server
       })
       .catch(error => {
           console.error("Eroare la preluarea listei utilizatorilor", error);
