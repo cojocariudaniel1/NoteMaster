@@ -9,7 +9,7 @@ function populateTasks(tasks) {
         inputCheckbox.classList.add('task-item');
         inputCheckbox.name = 'task';
         inputCheckbox.type = 'checkbox';
-        inputCheckbox.id = index + 1; // sau folosește altceva în loc de index
+        inputCheckbox.id = index + 1;
 
         if (task.status === 'Done') {
             inputCheckbox.checked = true;
