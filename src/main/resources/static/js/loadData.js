@@ -64,43 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-// // Găsește butonul după id
-// const saveButton = document.getElementById('saveButton');
-//
-// // Adaugă un eveniment de click la buton
-// saveButton.addEventListener('click', function () {
-//     // Aici poți prelua datele task-ului (nume și stare) din interfața web
-//     const taskName = document.getElementById("fname").value /* preiați numele task-ului din interfața web */;
-//     const taskStatus = document.getElementById("status1").value /* preiați starea task-ului din interfața web */;
-//     if (taskName && taskStatus) {
-//         saveTask(taskName, taskStatus);
-//     } else {
-//         console.error('Invalid task data');
-//     }
-//
-// });
-//
-//
-// function saveTask(name, status) {
-//     fetch('/save_task', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//             name: name,
-//             status: status,
-//         }),
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Task saved:', data);
-//             console.log(data);
-//         })
-//         .catch(error => {
-//             console.error('Error saving task:', error);
-//         });
-// }
 
 import { globalVar1, globalVar2 } from '/static/js/global.js';
 
